@@ -7,10 +7,11 @@
 
 // OpenCV 3.x required
 // depending on your computer configuration (OpenCV install path), the following line might need modifications
+#include <opencv2/imgproc.hpp>
 #include <opencv2/highgui/highgui_c.h>
 
 //
-#include "../picornt.h"
+#include "../../picornt.h"
 
 /*
 	a portable time function
@@ -490,8 +491,7 @@ int main(int argc, char* argv[])
 		printf("# All rights reserved.\n\n");
 
 		printf("# cascade parameters:\n");
-		printf("#	tsr = %f\n", ((float*)cascade)[0]);
-		printf("#	tsc = %f\n", ((float*)cascade)[1]);
+		printf("#	version = %d\n", ((int*)cascade)[0]);
 		printf("#	tdepth = %d\n", ((int*)cascade)[2]);
 		printf("#	ntrees = %d\n", ((int*)cascade)[3]);
 		printf("# detection parameters:\n");
